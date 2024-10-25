@@ -35,7 +35,7 @@ main {
 
 img {
     max-width: 100%;
-    height: auto;
+    height: 100px;
 }
 
 .podcast-container, .book-container {
@@ -57,7 +57,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px;
-    position: fixed;
+    position: relative;
     width: 100%;
     bottom: 0;
 }
