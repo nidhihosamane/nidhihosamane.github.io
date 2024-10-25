@@ -35,7 +35,16 @@ main {
 
 img {
     max-width: 100%;
-    height: 200px;
+    height: auto;
+}
+
+.podcast-container, .book-container {
+    display: flex;
+    gap: 20px;
+}
+
+.podcast, .book {
+    width: 50%;
 }
 
 ul {
