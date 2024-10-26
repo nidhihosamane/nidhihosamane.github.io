@@ -23,14 +23,9 @@ nav a:hover {
     text-decoration: underline;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     color: #223c5f;
 }
-
-h4 {
-    color: #fa9e64;
-}
-
 
 main {
     padding: 20px;
