@@ -170,11 +170,14 @@ iris.then(function (data) {
     };
 
     // Calculate quartiles by species
-    const quartilesBySpecies = d3.rollup(data, rollupFunction, d => d.Species);
+    // Group the data by species and calculate the quartiles (Q1, median, Q3, IQR) for each species using the rollupFunction
+    const quartilesBySpecies = d3.rollup(data, rollupFunction, d => d.species);
 
-    quartilesBySpecies.forEach((quartiles, Species) => {
-        const x = xScale(Species);
-        const boxWidth = xScale.bandwidth();
+    // Iterate over each species' quartile data, allowing us to plot the boxplot for each species
+    quartilesBySpecies.forEach((quartiles, species) => {
+    const x = xScale(species); // Get the x position for the boxplot based on the species
+    const boxWidth = xScale.bandwidth(); // Calculate the width of the box for the boxplot
+
         const { q1, median, q3, iqr } = quartiles;
 
         const lowerWhisker = Math.max(q1 - 1.5 * iqr, d3.min(data.filter(d => d.Species === Species), d => d.PetalLength));
